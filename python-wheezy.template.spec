@@ -8,7 +8,7 @@ Summary:	Leightweight template library
 Summary(pl.UTF-8):	Lekka biblioteka szablonów
 Name:		python-wheezy.template
 Version:	0.1.195
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/wheezy.template/
