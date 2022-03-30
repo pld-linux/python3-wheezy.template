@@ -1,19 +1,20 @@
 #
 # Conditional build:
-%bcond_with	tests	# unit tests (not included in release package)
+%bcond_with	tests	# unit tests (not included in sdist)
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
 Summary:	Leightweight template library
 Summary(pl.UTF-8):	Lekka biblioteka szablonów
 Name:		python-wheezy.template
-Version:	0.1.195
-Release:	5
+# keep 2.x here for python2 support
+Version:	2.0.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/wheezy.template/
 Source0:	https://files.pythonhosted.org/packages/source/w/wheezy.template/wheezy.template-%{version}.tar.gz
-# Source0-md5:	d6820542cebd340c34756cbb4485fbce
+# Source0-md5:	89732d100340a6b9c4b25e0c381d8e3f
 URL:		https://pypi.org/project/wheezy.template/
 %if %{with python2}
 BuildRequires:	python-Cython
@@ -100,6 +101,7 @@ lekką biblioteką szablonów. Osiągnięte cele projektu:
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest
 %endif
 %endif
@@ -108,6 +110,7 @@ lekką biblioteką szablonów. Osiągnięte cele projektu:
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest
 %endif
 %endif
