@@ -5,23 +5,23 @@
 Summary:	Leightweight template library
 Summary(pl.UTF-8):	Lekka biblioteka szablonów
 Name:		python3-wheezy.template
-Version:	3.1.0
-Release:	3
+Version:	3.2.3
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-#Source0Download: https://pypi.org/simple/wheezy.template/
-Source0:	https://files.pythonhosted.org/packages/source/w/wheezy.template/wheezy.template-%{version}.tar.gz
-# Source0-md5:	007efefc10233bc723475c90e6dccb40
+#Source0Download: https://pypi.org/simple/wheezy-template/
+Source0:	https://files.pythonhosted.org/packages/source/w/wheezy-template/wheezy_template-%{version}.tar.gz
+# Source0-md5:	aa474089713924e086c1cf730ee6b1be
 URL:		https://pypi.org/project/wheezy.template/
 BuildRequires:	python3-Cython
-BuildRequires:	python3-modules >= 1:3.6
+BuildRequires:	python3-modules >= 1:3.9
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python3-modules >= 1:3.6
+Requires:	python3-modules >= 1:3.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,7 +50,7 @@ lekką biblioteką szablonów. Osiągnięte cele projektu:
 - szybkość: duża wydajność renderowania.
 
 %prep
-%setup -q -n wheezy.template-%{version}
+%setup -q -n wheezy_template-%{version}
 
 %build
 %py3_build
